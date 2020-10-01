@@ -1,0 +1,358 @@
+/* carousel
+const Button = styled.button`
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  font: 400 11px system-ui;
+  background-color: inherit;
+  border: none;
+  font-size: 100%;
+  &:focus {outline:0;};
+`;
+const CloseButtonDiv = styled.div`
+  line-height: 1.43;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+
+  background-color: inherit;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 32px;
+  height: 32px;
+  padding: 16px 28px 8px !important;
+  `;
+
+const CloseSvg = styled.svg`
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+  display: block;
+  fill: rgb(255, 255, 255);
+  font-weight: 300;
+  font-size: 90%;
+  fill: rgb(255, 255, 255);
+`;
+
+const HeaderDiv = styled.div`
+  padding: 66px 15px 20px !important;
+`;
+
+const ArrowAndImageContainer = styled.div`
+  display: table-row !important;
+  height: 100% !important;
+`;
+
+const TableRow = styled.div`
+  display: table-row !important;
+`;
+
+const LeftArrowButton = styled.button`
+
+  position: absolute !important;
+  top: 0px !important;
+  height: 100% !important;
+  z-index: 3 !important;
+  font-size: medium !important;
+  width: 40px !important;
+  left: 0px !important;
+  background: none !important;
+  border-width: 0px !important;
+  border-style: initial !important;
+  border-color: initial !important;
+  border-image: initial !important;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  font: 400 11px system-ui;
+  &:focus {outline:0;};
+  padding: 1px 7px 2px;
+`;
+
+const RightArrowButton = styled.button`
+
+  position: absolute !important;
+  top: 60px !important;
+  height: 80% !important;
+  z-index: 3 !important;
+  font-size: medium !important;
+  right: 0px !important;
+  background: none !important;
+  border-width: 0px !important;
+  border-style: initial !important;
+  border-color: initial !important;
+  border-image: initial !important;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  font: 400 11px system-ui;
+  &:focus {outline:0;};
+  padding: 1px 7px 2px;
+`;
+
+const PreviousSvg = styled.svg`
+  cursor: pointer !important;
+  height: 4.8em;
+  width: 4.8em;
+  fill: rgb(255, 255, 255);
+`;
+
+const NextSvg = styled.svg`
+  cursor: pointer !important;
+  height: 4.8em;
+  width: 4.8em;
+  fill: rgb(255, 255, 255);
+`;
+const Frame = styled.div`
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  flex-direction: column;
+`;
+
+const CurrentPhotoFrame = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const CurrentPhoto = styled.img`
+  max-width: 100%;
+  height: 470px;
+  object-fit: cover;
+  background-position: 50% 50%;
+  background-size: cover;
+`;
+
+const CarouselContainer = styled.div`
+  background-color: #262626 !important;
+  position: fixed;
+  z-index: 2000 !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  overflow-y: auto !important;
+  transform: translate3d(0px, 0px, 0px) !important;
+`;
+
+const CaptionDiv = styled.div`
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  position: absolute;
+  z-index: 2;
+  bottom: 15%;
+  left: 25%;
+  color: white;
+`; */
+
+
+/* imageGrid const styled = window.styled;
+
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 15.5vw);
+  grid-gap: 0;
+  width: 100%;
+  background-color: #484848;
+  &:hover div {
+    opacity: 0.5;
+  }
+`;
+
+const MainImage = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  border: solid 1px #484848;
+  overflow: hidden;
+  ${Grid}:hover &:hover {
+    opacity: 1;
+  }
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transform: scale(1.05);
+    opacity: 1;
+  }
+`;
+
+const GridImage2 = styled.div`
+  grid-column_start: 3,
+  grid-column-end: 4,
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: solid 1px #484848;
+  overflow: hidden;
+  ${Grid}:hover &:hover {
+    opacity: 1;
+  }
+`;
+
+const GridImage3 = styled.div`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border: solid 1px #484848;
+  overflow: hidden;
+  ${Grid}:hover &:hover {
+    opacity: 1;
+  }
+`;
+
+const GridImage4 = styled.div`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: solid 1px #484848;
+  overflow: hidden;
+  ${Grid}:hover &:hover {
+    opacity: 1;
+  }
+`;
+const GridImage5 = styled.div`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border: solid 1px #484848;
+  overflow: hidden;
+  ${Grid}:hover &:hover {
+    opacity: 1;
+  }
+`; */
+
+/* const styled = window.styled;
+
+
+const ListItem = styled.li`
+  display: list-item;
+  text-align: -webkit-match-parent;
+  float: left !important;
+  background-color: rgb(0, 0, 0) !important;
+  margin-left: 10px !important;
+  opacity: 0.5;
+`;
+
+const ActiveListItem = styled(ListItem)`
+  opacity: 1;
+`;
+
+const ListButton = styled.button`
+  font-weight: inherit !important;
+
+  backface-visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  vertical-align: bottom !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border-width: 0px !important;
+  border-style: initial !important;
+  border-color: initial !important;
+  border-image: initial !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  font: 400 11px system-ui;
+`;
+
+const ListImg = styled.img`
+  width: 100px !important;
+  height: 67px !important;
+}
+`; */
+
+
+
+/* const styled = window.styled;
+
+
+const OuterContainer = styled.div`
+  max-width: 94vh !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+  left: 24.5%;
+  top: 85%;
+`;
+const SliderContainer = styled.div`
+  background-image: none !important;
+  background-color: transparent !important;
+  position: absolute !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  color: rgb(255,255,255) !important;
+  overflow: hidden !important;
+  border-radius: 0px !important;
+  margin-bottom: 24px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+`;
+
+const UnorderedListContainer = styled.div`
+  position: relative !important;
+  width: 11110px !important;
+`;
+
+const UnorderedList = styled.ul`
+  position: relative !important;
+  list-style-type: none !important;
+  left: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  transition: -ms-transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
+  `;
+
+const ShiftedSlider = styled(UnorderedList)`
+  transform: translateX(${(props) => { return props.transform; }}px);
+`;
+ */
